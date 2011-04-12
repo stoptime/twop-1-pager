@@ -1,0 +1,20 @@
+This is something I did for fun to mess around with Python,
+Beautiful Soup, and the Cheetah templating system.
+
+It is designed to take a long Television Without Pity review,
+which can be over 20 web pages sometimes, and spit out a
+single & clean page. You can try it out here: 
+
+http://www.givegoodweb.com/tools/twop/
+
+(example URL)
+http://www.televisionwithoutpity.com/show/dancing_with_the_stars/season_12_performance_4.php
+
+For me it's a handy little tool, and was a good way to learn 
+a few things.
+
+REQUIREMENTS:
+---------------------------------------------------------------
+Python
+Beautiful Soup (http://www.crummy.com/software/BeautifulSoup/)
+Cheetah Template Engine (http://www.cheetahtemplate.org/)
