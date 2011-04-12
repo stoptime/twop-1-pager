@@ -1,0 +1,13 @@
+#top, #bottom, #head, .article_pages {
+	display: none;
+}
+
+p#results {
+	background: #ddd;
+	color: #555;
+	font-size: 82%;
+	font-family: verdana;
+	padding: 4px;
+}
+
+p#results a { color: #555; }
