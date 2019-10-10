@@ -12,7 +12,9 @@ http://www.givegoodweb.com/tools/twop/ (no longer there)
 http://www.televisionwithoutpity.com/show/dancing_with_the_stars/season_12_performance_4.php
 
 For me it's a handy little tool, and was a good way to learn 
-a few things. But it turned into a kinda of a popular tool necessitating some basic caching. 
+a few things. 
+
+This tool eventually took off, and I hastily rewrote it in php with some basic caching - that version is NOT available on github yet, but it contains almost 16k cached reviews. Maybe someday I will do something with them - they are hilarious. 
 
 REQUIREMENTS:
 ---------------------------------------------------------------
