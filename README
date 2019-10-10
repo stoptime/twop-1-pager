@@ -3,16 +3,16 @@ Beautiful Soup, and the Cheetah templating system.
 
 It is designed to take a long Television Without Pity review,
 which can be over 20 web pages sometimes, and spit out a
-single & clean page. You can try it out here (this repository 
+single, clean page. You can try it out here (this repository 
 is exactly this): 
 
-http://www.givegoodweb.com/tools/twop/
+http://www.givegoodweb.com/tools/twop/ (no longer there)
 
-(example URL to use)
+(example URL to use - prob no longer there either)
 http://www.televisionwithoutpity.com/show/dancing_with_the_stars/season_12_performance_4.php
 
 For me it's a handy little tool, and was a good way to learn 
-a few things.
+a few things. But it turned into a kinda of a popular tool necessitating some basic caching. 
 
 REQUIREMENTS:
 ---------------------------------------------------------------
