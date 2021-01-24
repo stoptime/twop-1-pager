@@ -1,0 +1,507 @@
+@charset "utf-8"
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+$primary: #ffcc01;
+$family-sans-serif: Helvetica,Arial,sans-serif;
+$title-color: #000;
+$title-family: 'Anton', $family-sans-serif;
+$subtitle-family: $title-family;
+$white-bis: #f3f2ef;
+
+@import "~bulma/sass/utilities/_all"
+
+// "~bulma/sass/base/_all"
+@import "~bulma/sass/base/minireset.sass"
+// "~bulma/sass/base/generic.sass"
+$body-background-color: $scheme-main !default
+$body-size: 16px !default
+$body-min-width: 300px !default
+$body-rendering: optimizeLegibility !default
+$body-family: $family-primary !default
+$body-overflow-x: hidden !default
+$body-overflow-y: scroll !default
+
+$body-color: $text !default
+$body-font-size: 1em !default
+$body-weight: $weight-normal !default
+$body-line-height: 1.5 !default
+
+$small-font-size: 0.875em !default
+
+$strong-color: $text-strong !default
+$strong-weight: $weight-bold !default
+
+html
+  background-color: $body-background-color
+  font-size: $body-size
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  min-width: $body-min-width
+  overflow-x: $body-overflow-x
+  overflow-y: $body-overflow-y
+  text-rendering: $body-rendering
+  text-size-adjust: 100%
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+section
+  display: block
+
+body,
+button,
+input,
+select,
+textarea
+  font-family: $body-family
+
+body
+  color: $body-color
+  font-size: $body-font-size
+  font-weight: $body-weight
+  line-height: $body-line-height
+
+a
+  color: $link
+  cursor: pointer
+  text-decoration: none
+  strong
+    color: currentColor
+  &:hover
+    color: $link-hover
+
+span
+  font-style: inherit
+  font-weight: inherit
+
+strong
+  color: $strong-color
+  font-weight: $strong-weight
+
+// "~bulma/sass/base/helpers.sass"
+// Float
+
+.is-clearfix
+  +clearfix
+
+.is-pulled-left
+  float: left !important
+
+.is-pulled-right
+  float: right !important
+
+// Typography
+
+=typography-size($target:'')
+  @each $size in $sizes
+    $i: index($sizes, $size)
+    .is-size-#{$i}#{if($target == '', '', '-' + $target)}
+      font-size: $size !important
+
++typography-size()
+
++mobile
+  +typography-size('mobile')
+
++tablet
+  +typography-size('tablet')
+
++touch
+  +typography-size('touch')
+
++desktop
+  +typography-size('desktop')
+
++widescreen
+  +typography-size('widescreen')
+
++fullhd
+  +typography-size('fullhd')
+
+$alignments: ('centered': 'center', 'justified': 'justify', 'left': 'left', 'right': 'right')
+
+@each $alignment, $text-align in $alignments
+  .has-text-#{$alignment}
+    text-align: #{$text-align} !important
+
+@each $name, $pair in $colors
+  $color: nth($pair, 1)
+  .has-text-#{$name}
+    color: $color !important
+  a.has-text-#{$name}
+    &:hover,
+    &:focus
+      color: darken($color, 10%) !important
+  .has-background-#{$name}
+    background-color: $color !important
+
+// Visibility
+
+$displays: 'block' 'flex' 'inline' 'inline-block' 'inline-flex'
+
+@each $display in $displays
+  .is-#{$display}
+    display: #{$display} !important
+  +mobile
+    .is-#{$display}-mobile
+      display: #{$display} !important
+  +tablet
+    .is-#{$display}-tablet
+      display: #{$display} !important
+  +tablet-only
+    .is-#{$display}-tablet-only
+      display: #{$display} !important
+  +touch
+    .is-#{$display}-touch
+      display: #{$display} !important
+  +desktop
+    .is-#{$display}-desktop
+      display: #{$display} !important
+  +desktop-only
+    .is-#{$display}-desktop-only
+      display: #{$display} !important
+
+.is-hidden
+  display: none !important
+
++mobile
+  .is-hidden-mobile
+    display: none !important
+
++tablet
+  .is-hidden-tablet
+    display: none !important
+
++tablet-only
+  .is-hidden-tablet-only
+    display: none !important
+
++touch
+  .is-hidden-touch
+    display: none !important
+
++desktop
+  .is-hidden-desktop
+    display: none !important
+
++desktop-only
+  .is-hidden-desktop-only
+    display: none !important
+
++widescreen
+  .is-hidden-widescreen
+    display: none !important
+
+// "~bulma/sass/elements/_all"
+@import "~bulma/sass/elements/box.sass"
+@import "~bulma/sass/elements/other.sass"
+//"~bulma/sass/elements/button.sass"
+$button-color: $text-strong !default
+$button-background-color: $scheme-main !default
+$button-family: false !default
+
+$button-border-color: $border !default
+$button-border-width: $control-border-width !default
+
+$button-padding-vertical: calc(0.5em - #{$button-border-width}) !default
+$button-padding-horizontal: 1em !default
+
+$button-hover-color: $link-hover !default
+$button-hover-border-color: $link-hover-border !default
+
+$button-focus-color: $link-focus !default
+$button-focus-border-color: $link-focus-border !default
+$button-focus-box-shadow-size: 0 0 0 0.125em !default
+$button-focus-box-shadow-color: rgba($link, 0.25) !default
+
+$button-active-color: $link-active !default
+$button-active-border-color: $link-active-border !default
+
+$button-text-color: $text !default
+$button-text-hover-background-color: $background !default
+$button-text-hover-color: $text-strong !default
+
+$button-disabled-background-color: $scheme-main !default
+$button-disabled-border-color: $border !default
+$button-disabled-shadow: none !default
+$button-disabled-opacity: 0.5 !default
+
+$button-static-color: $text-light !default
+$button-static-background-color: $scheme-main-ter !default
+$button-static-border-color: $border !default
+
+// The button sizes use mixins so they can be used at different breakpoints
+=button-small
+  border-radius: $radius-small
+  font-size: $size-small
+=button-normal
+  font-size: $size-normal
+=button-medium
+  font-size: $size-medium
+=button-large
+  font-size: $size-large
+
+.button
+  @extend %control
+  @extend %unselectable
+  background-color: $button-background-color
+  border-color: $button-border-color
+  border-width: $button-border-width
+  color: $button-color
+  cursor: pointer
+  @if $button-family
+    font-family: $button-family
+  justify-content: center
+  padding-bottom: $button-padding-vertical
+  padding-left: $button-padding-horizontal
+  padding-right: $button-padding-horizontal
+  padding-top: $button-padding-vertical
+  text-align: center
+  white-space: nowrap
+  strong
+    color: inherit
+  .icon
+    &,
+    &.is-small,
+    &.is-medium,
+    &.is-large
+      height: 1.5em
+      width: 1.5em
+    &:first-child:not(:last-child)
+      margin-left: calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width})
+      margin-right: $button-padding-horizontal / 4
+    &:last-child:not(:first-child)
+      margin-left: $button-padding-horizontal / 4
+      margin-right: calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width})
+    &:first-child:last-child
+      margin-left: calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width})
+      margin-right: calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width})
+  // States
+  &:hover,
+  &.is-hovered
+    border-color: $button-hover-border-color
+    color: $button-hover-color
+  &:focus,
+  &.is-focused
+    border-color: $button-focus-border-color
+    color: $button-focus-color
+    &:not(:active)
+      box-shadow: $button-focus-box-shadow-size $button-focus-box-shadow-color
+  &:active,
+  &.is-active
+    border-color: $button-active-border-color
+    color: $button-active-color
+  // Colors
+  &.is-text
+    background-color: transparent
+    border-color: transparent
+    color: $button-text-color
+    text-decoration: underline
+    &:hover,
+    &.is-hovered,
+    &:focus,
+    &.is-focused
+      background-color: $button-text-hover-background-color
+      color: $button-text-hover-color
+    &:active,
+    &.is-active
+      background-color: darken($button-text-hover-background-color, 5%)
+      color: $button-text-hover-color
+    &[disabled],
+    fieldset[disabled] &
+      background-color: transparent
+      border-color: transparent
+      box-shadow: none
+  @each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.is-#{$name}
+      background-color: $color
+      border-color: transparent
+      color: $color-invert
+      &:hover,
+      &.is-hovered
+        background-color: darken($color, 2.5%)
+        border-color: transparent
+        color: $color-invert
+      &:focus,
+      &.is-focused
+        border-color: transparent
+        color: $color-invert
+        &:not(:active)
+          box-shadow: $button-focus-box-shadow-size rgba($color, 0.25)
+      &:active,
+      &.is-active
+        background-color: darken($color, 5%)
+        border-color: transparent
+        color: $color-invert
+      &[disabled],
+      fieldset[disabled] &
+        background-color: $color
+        border-color: transparent
+        box-shadow: none
+      &.is-loading
+        &::after
+          border-color: transparent transparent $color-invert $color-invert !important
+      &.is-outlined
+        background-color: transparent
+        border-color: $color
+        color: $color
+        &:hover,
+        &.is-hovered,
+        &:focus,
+        &.is-focused
+          background-color: $color
+          border-color: $color
+          color: $color-invert
+        &.is-loading
+          &::after
+            border-color: transparent transparent $color $color !important
+          &:hover,
+          &.is-hovered,
+          &:focus,
+          &.is-focused
+            &::after
+              border-color: transparent transparent $color-invert $color-invert !important
+        &[disabled],
+        fieldset[disabled] &
+          background-color: transparent
+          border-color: $color
+          box-shadow: none
+          color: $color
+      // If light and dark colors are provided
+      @if length($pair) >= 4
+        $color-light: nth($pair, 3)
+        $color-dark: nth($pair, 4)
+        &.is-light
+          background-color: $color-light
+          color: $color-dark
+          &:hover,
+          &.is-hovered
+            background-color: darken($color-light, 2.5%)
+            border-color: transparent
+            color: $color-dark
+          &:active,
+          &.is-active
+            background-color: darken($color-light, 5%)
+            border-color: transparent
+            color: $color-dark
+  // Sizes
+  &.is-small
+    +button-small
+  &.is-normal
+    +button-normal
+  &.is-medium
+    +button-medium
+  &.is-large
+    +button-large
+  // Modifiers
+  &[disabled],
+  fieldset[disabled] &
+    background-color: $button-disabled-background-color
+    border-color: $button-disabled-border-color
+    box-shadow: $button-disabled-shadow
+    opacity: $button-disabled-opacity
+  &.is-loading
+    color: transparent !important
+    pointer-events: none
+    &::after
+      @extend %loader
+      +center(1em)
+      position: absolute !important
+
+@import "~bulma/sass/elements/container.sass"
+//"~bulma/sass/elements/content.sass"
+@import "~bulma/sass/elements/icon.sass"
+@import "~bulma/sass/elements/notification.sass"
+@import "~bulma/sass/elements/title.sass"
+//@import "~bulma/sass/elements/other.sass"
+
+//"~bulma/sass/form/_all"
+@import "~bulma/sass/form/shared.sass"
+@import "~bulma/sass/form/input-textarea.sass"
+// "~bulma/sass/form/checkbox-radio.sass"
+// "~bulma/sass/form/select.sass"
+@import "~bulma/sass/form/tools.sass"
+
+//"~bulma/sass/components/_all"
+// "~bulma/sass/components/list.sass"
+// "~bulma/sass/components/media.sass"
+// "~bulma/sass/components/menu.sass"
+@import "~bulma/sass/components/message.sass"
+//"navbar.sass"
+//"tabs.sass"
+
+// "~bulma/sass/grid/_all"
+$column-gap: 0.75rem !default
+.column
+  display: block
+  flex-basis: 0
+  flex-grow: 1
+  flex-shrink: 1
+  padding: $column-gap
+.columns
+  margin-left: (-$column-gap)
+  margin-right: (-$column-gap)
+  margin-top: (-$column-gap)
+  &:last-child
+    margin-bottom: (-$column-gap)
+  &:not(:last-child)
+    margin-bottom: calc(1.5rem - #{$column-gap})
+
+
+@import "~bulma/sass/layout/_all"
+
+// CUSTOM ------------------
+html 
+  background-color: $white-bis
+
+.hero.is-primary
+  background-image: url('./static/img/twop-matte-crop.png');
+  background-repeat: no-repeat;
+  background-size: 18%;
+  background-position: bottom left;
+
+.hero.is-primary .title
+  color: rgba(0, 0, 0, 1);
+
+.no-padding-top 
+  padding-top: 0;  
+
+#up, #down 
+  cursor: pointer;
+
+#form-field
+  position: relative;
+  
+#clear
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  z-index: 10;
+
+#results p 
+  margin-bottom: .5rem;
+
+#results a:hover 
+  text-decoration: underline;
+
+p.page 
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+
+section.main 
+  padding-top: 1.5rem;
+
+#intro
+  margin-bottom: 1rem;
+
+p.exec-time 
+  font-style: italic;
+  color: #444444c2;
+  text-align: right;
+  border-top: 1px solid #ddd;
+  padding-top: .5rem;
+  margin-top: 2rem;

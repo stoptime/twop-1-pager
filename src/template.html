@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TWoP 1 Pager: Put that Television Without Pity Review on 1 Page!</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/static/favicon/manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css"
+    rel="preconnect" crossorigin>
+  <link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+  <link rel="preconnect dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="preconnect dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="preconnect dns-prefetch" href="https://polyfill.io">
+</head>
+<body>
+  <section class="hero is-primary has-text-centered">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">TWoP 1 Pager</h1>
+        <h2 class="subtitle">All the snark, on one page!</h2>
+      </div>
+    </div>
+  </section>
+  <section class="section main">
+    <div class="container">
+      <div class="columns has-text-centered">
+        <div class="column no-padding-top">
+          <p id="up-down"><i id="up" class="fas fa-chevron-up"></i><i id="down" class="fas fa-chevron-down is-hidden"></i></p>
+          <div id="intro">
+            <p>These fantastic reviews can now be found at: <a target="_blank"
+                href="http://www.brilliantbutcancelled.com/shows/">brilliantbutcancelled.com/shows</a>.</p>
+            <p>This tool will take a recap/review and parse it down to 1 page.</p>
+          </div>
+          <form>
+            <div class="field has-addons box" id="form-field">
+              <div id="clear"><a class="delete is-large"></a></div>
+              <div class="control has-icons-left has-icons-right is-expanded" id="has-icons">
+                <input class="input is-medium is-fullwidth" id="input" type="text"
+                  placeholder="http://www.brilliantbutcancelled.com/show/battlestar-galactica/the-plan-1/">
+                <span class="icon is-left is-medium is-hidden-mobile">
+                  <i class="fas fa-magic"></i>
+                </span>
+                <span class="icon is-right is-medium">
+                  <i class="fas fa-check"></i>
+                </span>
+              </div>
+              <div class="control" id="button-toggle">
+                <button class="button is-medium is-info" id="search">
+                  <span>Go</span>
+                  <span class="icon is-small">
+                    <i class="far fa-file-alt"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <div id="results"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <a target="_blank"
+          href="https://twitter.com/stoptime">@stoptime <i class="fab fa-twitter"></i></a> | More about this <i class="fab fa-github"></i> | <a
+          target="_blank" href="https://en.wikipedia.org/wiki/Television_Without_Pity">What is TWoP?</a>
+      </p>
+    </div>
+  </footer>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=EventSource"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-27793526-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-27793526-2');
+  </script>
+</body>
+
+</html>

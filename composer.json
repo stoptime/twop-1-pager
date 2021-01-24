@@ -1,0 +1,5 @@
+{
+    "require-dev": {
+        "deployer/dist": "^6.8"
+    }
+}

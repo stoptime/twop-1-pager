@@ -1,0 +1,14 @@
+{
+    "name": "twop/amp",
+    "description": "Async php implementation",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Matt Mayes",
+            "email": "mattamayes@gmail.com"
+        }
+    ],
+    "require": {
+        "amphp/artax": "^3.0"
+    }
+}
