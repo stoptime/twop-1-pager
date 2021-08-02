@@ -1,5 +1,7 @@
 # The TWOP 1 Pager
 
+## TWOP's Brilliant But Cancelled archives appear to be gone now - there is no functioning site and I've taken my scraper down :(
+
 <img align="right" src="src/static/img/twop-24.png" width="250">
 
 Pick a review, any review: http://www.brilliantbutcancelled.com/shows and plug it into https://twop1pager.com - and it will parse it down to 1 page and display a much nicer version. 
